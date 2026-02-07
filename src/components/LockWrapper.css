@@ -1,0 +1,56 @@
+.lock-wrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px dashed var(--color-primary);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: radial-gradient(circle, #fff 0%, var(--color-bg) 100%);
+}
+
+.lock-wrapper:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(216, 0, 50, 0.2);
+}
+
+.lock-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+.unlock-message {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.unlock-hint {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.unlocked-content.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

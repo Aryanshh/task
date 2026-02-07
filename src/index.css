@@ -1,0 +1,77 @@
+:root {
+  --color-primary: #FFB7B2;
+  /* Soft Pink */
+  --color-secondary: #FFDAC1;
+  /* Peach/Cream accent */
+  --color-accent: #D80032;
+  /* Deep Red */
+  --color-bg: #FFF8E1;
+  /* Cream/Warm White */
+  --color-text: #590d22;
+  --color-white: #ffffff;
+
+  --font-heading: 'Pacifico', cursive, system-ui;
+  --font-body: 'Nunito', sans-serif, system-ui;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Ensure centering wrapper */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Centers the container */
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Override any default alignment issues */
+#root {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  /* helps with centering inline-block elements */
+}
+
+/* Scrollbar styling for extra cuteness */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  border: 3px solid var(--color-bg);
+}

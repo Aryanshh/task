@@ -1,0 +1,154 @@
+.ancient-lock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-family: 'Cinzel', 'Times New Roman', serif;
+    /* Would need font import, falling back to serif */
+}
+
+.ancient-frame {
+    background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
+    /* Gold gradient */
+    border: 4px solid #5c4033;
+    /* Dark wood/bronze */
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.ancient-frame::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px dashed #5c4033;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.ancient-title {
+    color: #3e2723;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.ancient-display {
+    background: #2c1a1d;
+    border: 4px inset #d4af37;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+}
+
+.rune-slot {
+    font-size: 1.5rem;
+    color: #5c4033;
+    /* Empty slot color */
+    transition: color 0.3s;
+}
+
+.rune-slot.filled {
+    color: #ffeb3b;
+    /* Glowing Gold for filled */
+    text-shadow: 0 0 10px #ffeb3b;
+}
+
+.ancient-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ancient-key {
+    background: radial-gradient(circle, #e6c86e 0%, #aa8537 100%);
+    border: 2px solid #5c4033;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3e2723;
+    cursor: pointer;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    font-family: inherit;
+    transition: transform 0.1s;
+}
+
+.ancient-key:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ancient-key.clear-ancient {
+    background: #8b0000;
+    color: #fff;
+    grid-column: 2;
+    /* Centered in bottom row */
+}
+
+.ancient-footer {
+    font-size: 0.8rem;
+    color: #3e2723;
+    font-style: italic;
+}
+
+/* Animations */
+.ancient-shake {
+    animation: ancientShake 0.5s;
+}
+
+@keyframes ancientShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateX(5px) rotate(2deg);
+    }
+
+    75% {
+        transform: translateX(-5px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.reveal-ancient {
+    animation: openGate 1.5s ease-out;
+}
+
+@keyframes openGate {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}

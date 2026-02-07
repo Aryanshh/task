@@ -1,0 +1,119 @@
+.pin-lock-container {
+    background: #fdfdfd;
+    border-radius: 30px;
+    padding: 3rem 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pin-display {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.pin-display h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-family: var(--font-body);
+    font-weight: bold;
+}
+
+.dots-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: all 0.2s;
+}
+
+.dot.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.key {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background: #f0f0f0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.key:hover:not(.transparent) {
+    background: #e0e0e0;
+}
+
+.key:active:not(.transparent) {
+    transform: scale(0.95);
+}
+
+.key.transparent {
+    background: transparent;
+    cursor: default;
+}
+
+.key.clear-btn {
+    background: transparent;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+.key.clear-btn:hover {
+    background: #f9f9f9;
+    color: var(--color-accent);
+}
+
+/* Error Shake */
+.shake {
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

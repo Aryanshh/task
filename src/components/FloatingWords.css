@@ -1,0 +1,45 @@
+.floating-words-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through */
+    z-index: 1;
+    /* Behind title or just around it */
+    overflow: hidden;
+}
+
+.floating-word {
+    position: absolute;
+    color: #D80032;
+    /* Deep Red */
+    font-family: 'Dancing Script', cursive;
+    /* Handwritten style */
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0.8;
+    animation: floatAround 6s ease-in-out infinite;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-word {
+        font-size: 1.5rem;
+    }
+}

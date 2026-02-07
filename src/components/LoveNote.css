@@ -1,0 +1,225 @@
+.note-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    perspective: 1000px;
+}
+
+.note-section h2 {
+    color: var(--color-accent);
+    font-family: var(--font-heading);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
+
+.letter-lock-container {
+    padding: 1rem;
+}
+
+/* Envelope (Trigger) */
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: var(--color-primary);
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    margin: 0 auto;
+}
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffc4c0;
+    /* Slightly lighter */
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    z-index: 5;
+    border-radius: 5px;
+}
+
+.body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primary);
+    clip-path: polygon(0 0, 50% 40%, 100% 0, 100% 100%, 0 100%);
+    z-index: 4;
+    border-radius: 5px;
+}
+
+.letter-preview {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    height: 30px;
+    background: #fffdf0;
+    z-index: 2;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.heart-seal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    z-index: 6;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.instruction {
+    margin-top: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Modal Overlay */
+.letter-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    /* Darker background for contrast */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2000;
+    animation: fadeIn 0.5s;
+    backdrop-filter: none !important;
+    /* Force remove blur */
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Modal Content (The Ancient Paper) */
+.letter-modal-content {
+    background: #fdf5c9;
+    /* Yellowish vintage paper */
+    width: 85%;
+    max-width: 650px;
+    min-height: 70vh;
+    max-height: 90vh;
+    padding: 3rem;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow-y: auto;
+
+    /* Vintage Paper Grain */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 30px 30px;
+
+    transform: rotate(1deg);
+    border: 1px solid #d4c5b0;
+}
+
+/* Worn Edges Effect (Pseudo-element) */
+.letter-modal-content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 80px rgba(139, 69, 19, 0.15);
+    /* Brownish inner glow */
+    pointer-events: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #5d4037;
+    z-index: 10;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: #8b0000;
+}
+
+/* Formal Letter Typography */
+.formal-letter-content {
+    font-family: 'Times New Roman', serif;
+    color: #3e2723;
+    /* Dark brown ink */
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.letter-header {
+    text-align: right;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    font-size: 1rem;
+    color: #5d4037;
+    border-bottom: 1px solid rgba(93, 64, 55, 0.2);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    float: right;
+    clear: both;
+}
+
+.salutation {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    clear: right;
+}
+
+.letter-body {
+    margin-bottom: 1.5rem;
+    text-indent: 3rem;
+}
+
+.closing {
+    margin-top: 4rem;
+    text-align: right;
+    margin-right: 3rem;
+}
+
+.signature-text {
+    font-family: 'Great Vibes', 'Dancing Script', cursive;
+    /* Fallback chain */
+    font-size: 2.5rem;
+    color: #8b0000;
+    margin-top: 0.5rem;
+    transform: rotate(-5deg);
+    display: inline-block;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

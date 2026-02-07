@@ -1,0 +1,14 @@
+.section-divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    /* Space around the divider */
+}
+
+.vertical-dotted-line {
+    border-left: 3px dotted var(--color-accent);
+    height: 60px;
+    /* Height of the connector */
+    opacity: 0.6;
+}

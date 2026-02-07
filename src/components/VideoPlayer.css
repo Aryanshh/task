@@ -1,0 +1,55 @@
+.video-section {
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.video-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent);
+}
+
+.video-lock-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.video-frame {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    border: 2px solid var(--color-primary);
+}
+
+.video-frame video {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.video-placeholder-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #555;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+    pointer-events: none;
+    /* Let clicks pass to video controls if present */
+    display: none;
+    /* Hide if video plays really */
+}
+
+/* Show placeholder text only if src is empty visually - tricky with CSS, 
+   usually handled by JS logic, but for now we leave it simple. */
