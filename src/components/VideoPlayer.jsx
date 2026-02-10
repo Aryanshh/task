@@ -1,29 +1,23 @@
 import React from 'react';
 import './VideoPlayer.css';
 import QuizLock from './QuizLock';
+import VideoGallery from './VideoGallery';
+
+import SectionHearts from './SectionHearts';
 
 const VideoPlayer = () => {
     return (
-        <section className="video-section container">
-            <h2>Our Movie 🎬</h2>
-            <div className="video-lock-container">
+        <section className="video-section container" style={{ position: 'relative' }}>
+            <SectionHearts />
+            <h2>Our Journey 🎬</h2>
+            <div className="video-lock-container" style={{ position: 'relative', zIndex: 1 }}>
                 <QuizLock>
-                    <div className="video-wrapper">
-                        <div className="video-frame">
-                            {/* Replace with your actual video or Youtube embed */}
-                            <video controls poster="https://placehold.co/800x450/ffb4a2/white?text=Video+Thumbnail">
-                                <source src="#" type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                            <div className="video-placeholder-text">
-                                (Add your special video here!)
-                            </div>
-                        </div>
-                    </div>
+                    <VideoGallery />
                 </QuizLock>
             </div>
         </section>
     );
 };
+
 
 export default VideoPlayer;

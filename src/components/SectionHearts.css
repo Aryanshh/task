@@ -1,0 +1,49 @@
+.section-hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+    /* Behind content */
+}
+
+.floating-section-heart {
+    position: absolute;
+    color: #ff4d6d;
+    opacity: 0;
+}
+
+@keyframes floatFromLeft {
+    0% {
+        transform: translate(-10vw, 110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(var(--tx-end), -20vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes floatFromRight {
+    0% {
+        transform: translate(110vw, 110vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(var(--tx-end), -20vh) rotate(-360deg);
+        opacity: 0;
+    }
+}
