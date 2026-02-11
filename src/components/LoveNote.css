@@ -124,7 +124,7 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
     background-size: 30px 30px;
 
-    transform: rotate(1deg);
+    /* transform: rotate(1deg); -> Removed for alignment correction */
     border: 1px solid #d4c5b0;
 }
 
@@ -168,9 +168,12 @@
     font-size: 1.2rem;
     line-height: 1.8;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 .letter-header {
+    align-self: flex-end;
     text-align: right;
     margin-bottom: 2.5rem;
     font-style: italic;
@@ -178,25 +181,25 @@
     color: #5d4037;
     border-bottom: 1px solid rgba(93, 64, 55, 0.2);
     padding-bottom: 0.5rem;
-    display: inline-block;
-    float: right;
-    clear: both;
 }
 
 .salutation {
     font-weight: bold;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
-    clear: right;
+    align-self: flex-start;
 }
 
 .letter-body {
     margin-bottom: 1.5rem;
     text-indent: 3rem;
+    /* Indent for classic feel */
+    text-align: left;
 }
 
 .closing {
     margin-top: 4rem;
+    align-self: flex-end;
     text-align: right;
     margin-right: 3rem;
 }

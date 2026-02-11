@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import './LoveNote.css';
 import LockWrapper from './LockWrapper';
 
@@ -47,8 +48,8 @@ const LoveNote = () => {
                 </div>
             </div>
 
-            {/* Full Screen Modal */}
-            {isOpen && (
+            {/* Full Screen Modal via Portal to escape container constraints */}
+            {isOpen && createPortal(
                 <div className="letter-modal-overlay" onClick={toggleNote}>
                     <div className="letter-modal-content paper-texture" onClick={(e) => e.stopPropagation()}>
                         <button className="close-btn" onClick={toggleNote}>&times;</button>
@@ -70,7 +71,8 @@ const LoveNote = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
         </section>
     );

@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Bouden';
+  src: url('./assets/fonts/Bouden.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --color-primary: #FFB7B2;
   /* Soft Pink */
@@ -10,7 +17,7 @@
   --color-text: #590d22;
   --color-white: #ffffff;
 
-  --font-heading: 'Pacifico', cursive, system-ui;
+  --font-heading: 'Bouden', cursive, system-ui;
   --font-body: 'Nunito', sans-serif, system-ui;
 }
 
@@ -74,4 +81,18 @@ img {
   background-color: var(--color-primary);
   border-radius: 20px;
   border: 3px solid var(--color-bg);
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import HeartBackground from './components/HeartBackground';
 import Hero from './components/Hero';
+import FlappyHeartGame from './components/FlappyHeartGame'; // Import Game
 import PhotoCollage from './components/PhotoCollage';
+import SongDedication from './components/SongDedication';
 import SecretVault from './components/SecretVault';
 import VideoPlayer from './components/VideoPlayer';
 import LoveNote from './components/LoveNote';
@@ -10,21 +12,36 @@ import SectionDivider from './components/SectionDivider';
 import './index.css'; // Ensure global styles are applied
 
 function App() {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
   return (
     <div className="app-container">
       <HeartBackground />
 
       <main>
         <Hero />
-        <PhotoCollage />
-        <SectionDivider />
-        <SecretVault />
-        <SectionDivider />
-        <BeatingHeart />
-        <SectionDivider />
-        <VideoPlayer />
-        <SectionDivider />
-        <LoveNote />
+
+        {/* Unlock Game */}
+        {!isUnlocked && (
+          <FlappyHeartGame onUnlock={() => setIsUnlocked(true)} />
+        )}
+
+        {/* Content Box - Only visible after unlock */}
+        {isUnlocked && (
+          <div className="unlocked-content animate-fade-in">
+            <PhotoCollage />
+            <SectionDivider />
+            <SongDedication />
+            <SectionDivider />
+            <SecretVault />
+            <SectionDivider />
+            <BeatingHeart />
+            <SectionDivider />
+            <VideoPlayer />
+            <SectionDivider />
+            <LoveNote />
+          </div>
+        )}
       </main>
 
       <footer style={{

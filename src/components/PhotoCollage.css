@@ -9,6 +9,24 @@
     color: var(--color-accent);
 }
 
+.shuffle-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 4px 15px rgba(216, 0, 50, 0.3);
+}
+
+.shuffle-btn:hover {
+    background-color: #b00020;
+    transform: scale(1.05);
+}
+
 .collage-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -59,6 +77,6 @@
     z-index: 6;
 }
 
-.photo-card:hover .overlay {
+/* .photo-card:hover .overlay {
     transform: translateY(0);
-}
+} */
