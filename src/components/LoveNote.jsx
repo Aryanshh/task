@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import './LoveNote.css';
 import LockWrapper from './LockWrapper';
+import SectionHearts from './SectionHearts';
 
 const LoveNote = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,7 @@ const LoveNote = () => {
 
     return (
         <section className="note-section container">
+            <SectionHearts />
             <h2>A Letter for My Valentine 💌</h2>
 
             <div className="letter-lock-container">
@@ -51,6 +53,7 @@ const LoveNote = () => {
             {/* Full Screen Modal via Portal to escape container constraints */}
             {isOpen && createPortal(
                 <div className="letter-modal-overlay" onClick={toggleNote}>
+                    <SectionHearts />
                     <div className="letter-modal-content paper-texture" onClick={(e) => e.stopPropagation()}>
                         <button className="close-btn" onClick={toggleNote}>&times;</button>
 
@@ -58,16 +61,22 @@ const LoveNote = () => {
                             <div className="letter-header">
                                 <span className="date">February 14, 2026</span>
                             </div>
-                            <p className="salutation">My Dearest Nmii,</p>
+                            <p className="salutation">Dear Nmii,</p>
                             <p className="letter-body">
-                                {currentMessage}
+                                I know I have said this a 3000 bar, but I like you.. a lottt and thoda thoda zyada pyaar bhi hone laga hai idk how, you are one of the best things happened to me, and I hope this stays me with anyhow, I know I get annoying, creepy, restless but you mean a lottt to me.
                             </p>
                             <p className="letter-body">
-                                Every moment with you is a treasure I hold dear. You are the melody to my heart's song.
+                                I know you dont like to celebrate Valentines day, my apologies for forcing you through these days, but I want to cherish these moments with you throughout my life… 🥺
+                            </p>
+                            <p className="letter-body">
+                                I hope to see “us” succeed and conquer everything we wished for.. 🧿
+                            </p>
+                            <p className="letter-body" style={{ fontStyle: 'italic', marginTop: '1rem' }}>
+                                Hope to see you in black dress today
                             </p>
                             <div className="closing">
                                 <p>Forever Yours,</p>
-                                <p className="signature-text">Me</p>
+                                <p className="signature-text">Ryy</p>
                             </div>
                         </div>
                     </div>

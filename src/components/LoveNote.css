@@ -117,6 +117,15 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
     position: relative;
     overflow-y: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.letter-modal-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
 
     /* Vintage Paper Grain */
     background-image:
